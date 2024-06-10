@@ -4,7 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c055b46-962e-4b5d-b016-b07e0f6d541d" name="Changes" comment="" />
+    <list default="true" id="5c055b46-962e-4b5d-b016-b07e0f6d541d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/CardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/Hand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs08.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs09.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/Clubs10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/ClubsAce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/ClubsJack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/ClubsKing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/clubs/ClubsQueen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds08.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds09.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/Diamonds10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/DiamondsAce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/DiamondsJack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/DiamondsKing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/diamonds/DiamondsQueen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts08.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts09.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/Hearts10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/HeartsAce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/HeartsJack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/HeartsKing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/hearts/HeartsQueen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/others/Empty01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/others/Empty02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/others/Joker01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/others/Joker02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades07.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades08.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades09.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/Spades10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/SpadesAce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/SpadesJack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/SpadesKing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/card/spades/SpadesQueen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/opponent/Opponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/opponent/OpponentHand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/PlayerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/PlayerHand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/scenes/Board/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/scenes/MainMenu/BgImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/scenes/MainMenu/ButtonPlay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/scenes/MainMenu/ButtonQuit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/scenes/MainMenu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/scenes/MainMenu/MainMenu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +107,7 @@
     "Application.Main.executor": "Run",
     "Application.engine.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CardGame",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/fdear/IdeaProjects/Engine",
     "project.structure.last.edited": "Project",
