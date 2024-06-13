@@ -1,13 +1,12 @@
 package engine.controller;
 
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 
 public abstract class InputListener {
 
-    protected GameObject gameObject;
+    protected final GameObject gameObject;
 
-    public InputListener(GameObject gameObject) {
+    protected InputListener(GameObject gameObject) {
         this.gameObject = gameObject;
     }
-
 }
