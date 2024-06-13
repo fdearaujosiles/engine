@@ -7,6 +7,7 @@ public class HeartsJack extends Card {
 
     public HeartsJack() {
         super();
+        this.value = 10;
         setAnimation(new Animation(getSprite(), 24, 25));
     }
 }

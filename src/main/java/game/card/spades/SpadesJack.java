@@ -7,6 +7,7 @@ public class SpadesJack extends Card {
 
     public SpadesJack() {
         super();
+        this.value = 10;
         setAnimation(new Animation(getSprite(), 10, 11));
     }
 }

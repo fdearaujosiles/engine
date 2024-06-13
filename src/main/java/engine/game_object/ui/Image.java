@@ -1,6 +1,6 @@
-package engine.gameObject.ui;
+package engine.game_object.ui;
 
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 import engine.sprite.Sprite;
 
 public class Image extends GameObject {

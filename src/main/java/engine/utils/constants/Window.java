@@ -1,8 +1,13 @@
 package engine.utils.constants;
 
-public class Window {
+import engine.utils.functions.Utils;
+
+public class Window extends Utils {
+
+    protected Window() {super();}
 
     public static final boolean SHOW_FPS_COUNTER = true;
+    public static final boolean SHOW_POINTER = true;
 
     public static final int UPS_SET = 200;
     public static final int FPS_SET = 120;

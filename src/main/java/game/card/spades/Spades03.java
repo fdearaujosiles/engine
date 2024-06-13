@@ -1,12 +1,12 @@
 package game.card.spades;
 
 import game.card.Card;
-import engine.sprite.Animation;
 
 public class Spades03 extends Card {
 
     public Spades03() {
         super();
+        this.value = 3;
         setAnimation(2, 3);
     }
 }

@@ -7,6 +7,7 @@ public class HeartsQueen extends Card {
 
     public HeartsQueen() {
         super();
+        this.value = 10;
         setAnimation(new Animation(getSprite(), 25, 26));
     }
 }

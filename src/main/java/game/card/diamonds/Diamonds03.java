@@ -7,6 +7,7 @@ public class Diamonds03 extends Card {
 
     public Diamonds03() {
         super();
+        this.value = 3;
         setAnimation(new Animation(getSprite(), 44, 45));
     }
 }

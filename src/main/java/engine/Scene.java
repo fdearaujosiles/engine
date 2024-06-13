@@ -1,12 +1,12 @@
-package engine.gameObject;
+package engine;
 
-import engine.gameObject.ui.Text;
+import engine.game_object.GameObjectManager;
 
 public abstract class Scene {
 
     protected final GameObjectManager gOM;
 
-    public Scene(GameObjectManager gOM) {
+    protected Scene(GameObjectManager gOM) {
         this.gOM = gOM;
         gOM.destroyAllObjects();
         start();

@@ -7,6 +7,7 @@ public class Clubs10 extends Card {
 
     public Clubs10() {
         super();
+        this.value = 10;
         setAnimation(new Animation(getSprite(), 37, 38));
     }
 }

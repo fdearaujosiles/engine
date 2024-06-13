@@ -1,7 +1,7 @@
 package game.card;
 
 import engine.controller.MouseInputListener;
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;

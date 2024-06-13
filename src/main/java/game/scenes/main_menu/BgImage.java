@@ -1,8 +1,8 @@
-package game.scenes.MainMenu;
+package game.scenes.main_menu;
 
-import engine.gameObject.ui.Image;
+import engine.game_object.ui.Image;
 
-import static engine.utils.constants.Sprites.BG_IMAGE;
+import static game.utils.constants.Sprites.BG_IMAGE;
 import static engine.utils.constants.Window.SCREEN_HEIGHT;
 import static engine.utils.constants.Window.SCREEN_WIDTH;
 

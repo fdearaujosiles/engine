@@ -2,30 +2,31 @@ package game.card;
 
 import engine.sprite.Animation;
 import engine.sprite.Sprite;
-import engine.utils.constants.Sprites;
-import engine.gameObject.GameObject;
+import game.utils.constants.Sprites;
+import engine.game_object.GameObject;
 
 public abstract class Card extends GameObject {
 
-    public static enum State {
-        FaceDown,
-        FaceUp,
-        OnDeck,
-        OnPile
+    public enum State {
+        FACE_DOWN,
+        FACE_UP,
+        ON_DECK,
+        ON_PILE
     }
 
-    public int value;
-    private State state = State.OnDeck;
+    protected int value = 0;
+
+    private State state = State.FACE_DOWN;
     private Animation cardBack;
 
     public void setState(State state) {
         this.state = state;
     }
 
-    public Card() {
+    protected Card() {
         super();
         setSprite(Sprites.DEFAULT_CARD_DECK, 14, 4);
-        setCardBack(new Animation(new Sprite(Sprites.DECKBACKS, 7, 4), 23, 24));
+        setCardBack(new Animation(new Sprite(Sprites.DECKBACKS, 7, 4), 22, 23));
         setMouseInputs(new CardController(this));
     }
 
@@ -40,11 +41,14 @@ public abstract class Card extends GameObject {
     @Override
     public Animation getAnimation() {
         return switch (state) {
-            case FaceUp -> super.getAnimation();
-            case FaceDown -> cardBack;
-            case OnDeck -> null;
-            case OnPile -> null;
+            case FACE_UP, ON_PILE -> super.getAnimation();
+            case FACE_DOWN -> cardBack;
+            case ON_DECK -> null;
         };
+    }
+
+    public int getValue() {
+        return value;
     }
 
     @Override

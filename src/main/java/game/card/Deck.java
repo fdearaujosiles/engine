@@ -1,8 +1,7 @@
 package game.card;
 
-import engine.controller.MouseInputListener;
-import engine.utils.constants.Sprites;
-import engine.gameObject.GameObject;
+import game.utils.constants.Sprites;
+import engine.game_object.GameObject;
 import game.card.clubs.*;
 import game.card.diamonds.*;
 import game.card.hearts.*;
@@ -10,21 +9,20 @@ import game.card.others.Joker01;
 import game.card.others.Joker02;
 import game.card.spades.*;
 
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import static engine.utils.functions.Utils.shuffleArray;
 
 public class Deck extends GameObject {
 
-    private ArrayList<Card> cards;
+    private final ArrayList<Card> cards = new ArrayList<>();
 
     public Deck() {
         super();
         setSprite(Sprites.DECKBACKS, 7, 4);
-        setAnimation(23, 24);
+        setAnimation(22, 23);
 
-        getNewDeck();
+        addNewDeck();
     }
 
     public void shuffle() {
@@ -32,16 +30,16 @@ public class Deck extends GameObject {
     }
 
     public Card drawCard() {
+        if(cards.isEmpty()) return null;
         return cards.removeFirst();
     }
 
     public void addCard(Card card) {
         cards.add(card);
-        card.setState(Card.State.OnDeck);
+        card.setState(Card.State.ON_DECK);
     }
 
-    private void getNewDeck() {
-        cards = new ArrayList<>();
+    private void addNewDeck() {
         addCard(new SpadesAce());
         addCard(new Spades02());
         addCard(new Spades03());
