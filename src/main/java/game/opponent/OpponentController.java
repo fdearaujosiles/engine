@@ -1,6 +1,6 @@
 package game.opponent;
 
-import engine.controller.MouseInputListener;
+import engine.input.MouseInputListener;
 import game.card.Card;
 
 import java.awt.event.MouseEvent;

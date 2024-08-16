@@ -1,6 +1,6 @@
 package engine.game_object.ui.debug;
 
-import engine.controller.MouseInputListener;
+import engine.input.MouseInputListener;
 import engine.game_object.ui.Text;
 
 import java.awt.*;

@@ -1,4 +1,4 @@
-package engine.controller;
+package engine.input;
 
 import engine.game_object.GameObject;
 import engine.window.GamePanel;

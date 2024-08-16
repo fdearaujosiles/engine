@@ -1,7 +1,6 @@
 package engine.window;
 
-import engine.controller.InputManager;
-import engine.error.EngineRuntimeException;
+import engine.input.InputManager;
 import engine.game_object.GameObjectManager;
 import engine.game_object.GameObject;
 import engine.game_object.ui.debug.FPSCounter;
@@ -58,14 +57,12 @@ public class GamePanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        updateAnimation();
         try {
+            updateAnimation();
             if(!gOM.isEmpty()) {
                 gOM.forEach(gameObject -> gameObject.draw(g, aniIndex));
             }
-        } catch (ConcurrentModificationException e) {
-            throw new EngineRuntimeException();
-        }
+        } catch (ConcurrentModificationException _) {}
 
         fpsCounter.draw(g,aniIndex);
         pointer.draw(g,aniIndex);

@@ -1,11 +1,13 @@
 package game.scenes.main_menu;
 
+import engine.audio.Audio;
 import engine.game_object.GameObjectManager;
 import engine.game_object.ui.button.Button;
 import game.scenes.board.Board;
 
 import java.awt.*;
 
+import static game.utils.constants.Audios.*;
 import static game.utils.constants.Sprites.PLAY_BUTTON;
 import static engine.utils.constants.Window.SCREEN_HEIGHT;
 import static engine.utils.constants.Window.SCREEN_WIDTH;
