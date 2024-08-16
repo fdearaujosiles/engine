@@ -1,14 +1,11 @@
 package game.card;
 
-import engine.audio.Audio;
 import engine.game_object.GameObject;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import static game.utils.constants.Audios.CARD_AUDIO;
 import static java.util.Objects.isNull;
 
 public class Hand {
