@@ -11,9 +11,6 @@ public class MainMenu extends Scene {
 
     @Override
     public void start() {
-        gOM.createObject(new BgImage());
-        gOM.createObject(new ButtonPlay(gOM));
-        gOM.createObject(new ButtonQuit());
     }
 
 }
