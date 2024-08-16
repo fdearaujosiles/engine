@@ -2,8 +2,8 @@ package engine.game_object;
 
 import engine.error.ResourceLoadingException;
 import engine.sprite.Animation;
-import engine.controller.KeyboardInputListener;
-import engine.controller.MouseInputListener;
+import engine.input.KeyboardInputListener;
+import engine.input.MouseInputListener;
 import engine.sprite.Sprite;
 
 import java.awt.*;

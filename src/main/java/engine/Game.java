@@ -30,8 +30,8 @@ public class Game implements Runnable {
         gameThread.start();
     }
 
-    @SuppressWarnings("InfiniteLoopStatement")
     @Override
+    @SuppressWarnings("InfiniteLoopStatement")
     public void run() {
 
         int frames = 0;
