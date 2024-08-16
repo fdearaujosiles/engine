@@ -7,7 +7,6 @@ import game.scenes.board.Board;
 
 import java.awt.*;
 
-import static game.utils.constants.Audios.CARD_AUDIO;
 import static game.utils.constants.Audios.COIN_AUDIO;
 import static game.utils.constants.Sprites.PLAY_BUTTON;
 import static engine.utils.constants.Window.SCREEN_HEIGHT;
