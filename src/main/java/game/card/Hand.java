@@ -1,11 +1,13 @@
 package game.card;
 
+import engine.audio.Audio;
 import engine.game_object.GameObject;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static game.utils.constants.Audios.CARD_AUDIO;
 import static java.util.Objects.isNull;
 
 public class Hand {
@@ -35,10 +37,12 @@ public class Hand {
     }
 
     public void addCard(Card card) {
+        new Audio(CARD_AUDIO);
         cards.add(card);
     }
 
     public void removeCard(Card card) {
+        new Audio(CARD_AUDIO);
         cards.remove(card);
     }
 

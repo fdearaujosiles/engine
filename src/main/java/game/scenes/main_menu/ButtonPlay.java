@@ -29,6 +29,5 @@ public class ButtonPlay extends Button {
     public void clicked() {
         new Board(gOM);
         new Audio(COIN_AUDIO);
-        new Audio(CARD_AUDIO);
     }
 }
