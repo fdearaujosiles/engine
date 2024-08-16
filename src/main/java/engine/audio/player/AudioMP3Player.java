@@ -9,10 +9,8 @@ import java.io.FileInputStream;
 
 public class AudioMP3Player extends PlaybackListener {
 
-    static final Object playSignal = new Object();
     File resource;
     AdvancedPlayer advancedPlayer;
-    boolean isPaused;
 
     public AudioMP3Player(String resource) {
         this.resource = new File(getClass().getResource(resource).getPath());

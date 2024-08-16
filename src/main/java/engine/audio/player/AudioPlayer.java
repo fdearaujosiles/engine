@@ -3,7 +3,7 @@ package engine.audio.player;
 public abstract class AudioPlayer extends Thread {
 
     String resource;
-    int delay = 0;
+    int delay;
 
     public AudioPlayer(String resource, int delay) {
         this.resource = resource;
