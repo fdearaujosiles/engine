@@ -1,13 +1,13 @@
-package engine.controller;
+package engine.input;
 
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 import engine.window.GamePanel;
 
 import static java.util.Objects.isNull;
 
 public class InputManager {
 
-    GamePanel gamePanel;
+    private final GamePanel gamePanel;
 
     public InputManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;

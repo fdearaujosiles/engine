@@ -1,4 +1,4 @@
-package engine.gameObject;
+package engine.game_object;
 
 import java.awt.*;
 

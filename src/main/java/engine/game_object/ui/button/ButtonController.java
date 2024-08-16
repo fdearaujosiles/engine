@@ -1,7 +1,7 @@
-package engine.gameObject.ui;
+package engine.game_object.ui.button;
 
-import engine.controller.MouseInputListener;
-import engine.gameObject.GameObject;
+import engine.input.MouseInputListener;
+import engine.game_object.GameObject;
 
 import java.awt.event.MouseEvent;
 

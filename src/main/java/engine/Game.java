@@ -1,69 +1,69 @@
 package engine;
 
-import engine.gameObject.ui.FPSCounter;
+import engine.game_object.GameObjectManager;
 import engine.window.GamePanel;
-import engine.window.GameWindow;
-import game.scenes.MainMenu.MainMenu;
+
+import java.lang.reflect.InvocationTargetException;
 
 import static engine.utils.constants.Window.*;
 
 public class Game implements Runnable {
 
-    private Thread gameThread;
 
-    private GameWindow gameWindow;
     private GamePanel gamePanel;
-    private FPSCounter fpsCounter;
 
-    public Game() {
-        startGame();
-        // FirstScene load
-        new MainMenu(gamePanel.getGameObjectManager());
+    public Game(Class<?> firstScene) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        if(Scene.class.isAssignableFrom(firstScene)) {
+            startGame();
+            // FirstScene load
+            firstScene.getDeclaredConstructor(GameObjectManager.class).newInstance(gamePanel.getGameObjectManager());
+        } else {
+            throw new InstantiationException("The constructor parameter should extend Scene class!");
+        }
     }
 
     private void startGame() {
+        Thread gameThread;
         gamePanel = new GamePanel();
-        gameWindow = new GameWindow(gamePanel);
-        fpsCounter = new FPSCounter(gamePanel);
         gamePanel.requestFocus();
         gameThread = new Thread(this);
         gameThread.start();
     }
 
     @Override
+    @SuppressWarnings("InfiniteLoopStatement")
     public void run() {
 
         int frames = 0;
-        double deltaF = 0;
+        gamePanel.setDeltaFrame(0);
         double timePerFrame = 1000000000.0 / FPS_SET;
         long lastFrameCheck = System.currentTimeMillis();
 
         int updates = 0;
-        double deltaU = 0;
+        gamePanel.setDeltaUpdate(0);
         double timePerUpdate = 1000000000.0 / UPS_SET;
         long previousUpdate = System.nanoTime();
 
         while(true) {
             long now = System.nanoTime();
-            deltaU += (now - previousUpdate) / timePerUpdate;
-            deltaF += (now - previousUpdate) / timePerFrame;
+            gamePanel.addToDeltaUpdate((now - previousUpdate) / timePerUpdate);
+            gamePanel.addToDeltaFrame((now - previousUpdate) / timePerFrame);
             previousUpdate = now;
 
-            if(deltaU >= 1) {
+            if(gamePanel.getDeltaUpdate() >= 1) {
                 update();
                 updates++;
-                deltaU--;
+                gamePanel.addToDeltaUpdate(-1);
             }
-            if(deltaF >= 1) {
-                fpsCounter.draw();
+            if(gamePanel.getDeltaFrame() >= 1) {
                 gamePanel.repaint();
                 frames++;
-                deltaF--;
+                gamePanel.addToDeltaFrame(-1);
             }
 
             if(System.currentTimeMillis() - lastFrameCheck >= 1000) {
                 lastFrameCheck = System.currentTimeMillis();
-                fpsCounter.update(frames, updates);
+                gamePanel.getFpsCounter().update(frames, updates);
                 frames = 0;
                 updates = 0;
             }

@@ -1,18 +1,16 @@
-package engine.gameObject.ui;
+package engine.game_object.ui.button;
 
-import engine.controller.MouseInputListener;
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
 
 public abstract class Button extends GameObject {
 
-    public Button(Point point, Dimension size) {
+    protected Button(Point point, Dimension size) {
         super(point, size);
         initialize();
     }
-    public Button(int x, int y, int width, int height) {
+    protected Button(int x, int y, int width, int height) {
         super(x, y, width, height);
         initialize();
     }

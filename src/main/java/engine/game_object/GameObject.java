@@ -1,9 +1,9 @@
-package engine.gameObject;
+package engine.game_object;
 
+import engine.error.ResourceLoadingException;
 import engine.sprite.Animation;
-import engine.window.GamePanel;
-import engine.controller.KeyboardInputListener;
-import engine.controller.MouseInputListener;
+import engine.input.KeyboardInputListener;
+import engine.input.MouseInputListener;
 import engine.sprite.Sprite;
 
 import java.awt.*;
@@ -11,10 +11,11 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 import static engine.utils.constants.Window.SCALE;
+import static java.util.Objects.isNull;
 
 public abstract class GameObject implements Drawable {
-    private Point position = new Point(0, 0);
-    private Dimension size = new Dimension(0, 0);
+    private final Point position = new Point(0, 0);
+    private final Dimension size = new Dimension(0, 0);
     private int rotation = 0;
     private Sprite sprite;
     private Animation animation;
@@ -24,12 +25,16 @@ public abstract class GameObject implements Drawable {
     public void update() {}
 
     public void draw(Graphics g, int animIndex) {
+        if(isNull(getAnimation())) return;
+
         BufferedImage frame = getAnimation().getFrame(animIndex);
         Graphics2D g2d = (Graphics2D) g;
         AffineTransform old = g2d.getTransform();
-        g2d.rotate(Math.toRadians(getRotation()), getWidth() / 2.0, getHeight() / 2.0);
+        g2d.rotate(Math.toRadians(getRotation()), Math.abs(getWidth()) / 2.0, Math.abs(getHeight()) / 2.0);
 
-        g.drawImage(frame, getX(), getY(), getWidth(), getHeight(), null);
+        int actualX = getWidth() >= 0 ? getX() : getX() - getWidth();
+        int actualY = getHeight() >= 0 ? getY() : getY() - getHeight();
+        g.drawImage(frame, actualX, actualY, getWidth(), getHeight(), null);
         g2d.setTransform(old);
     }
 
@@ -50,25 +55,25 @@ public abstract class GameObject implements Drawable {
         this.position.y += point.y;
     }
 
-    public GameObject(int x, int y) {
+    protected GameObject(int x, int y) {
         setPosition(x, y);
     }
 
-    public GameObject(Point point) {
+    protected GameObject(Point point) {
         setPosition(point.x, point.y);
     }
 
-    public GameObject(Point point, Dimension size) {
+    protected GameObject(Point point, Dimension size) {
         setPosition(point.x, point.y);
         setSize(size.width, size.height);
     }
 
-    public GameObject(int x, int y, int width, int height) {
+    protected GameObject(int x, int y, int width, int height) {
         setPosition(x, y);
         setSize(width, height);
     }
 
-    public GameObject() {}
+    protected GameObject() {}
 
     public int getX() {
         return position.x;
@@ -138,11 +143,11 @@ public abstract class GameObject implements Drawable {
         return rotation;
     }
 
-    public void setAnimation(String sprite) {
+    public void setAnimation(String sprite) throws ResourceLoadingException {
         setSprite(sprite);
         setAnimation(new Animation(getSprite()));
     }
-    public void setAnimation(String sprite, int start,  int end) {
+    public void setAnimation(String sprite, int start,  int end) throws ResourceLoadingException {
         setSprite(sprite);
         setAnimation(new Animation(getSprite(), start, end));
     }
@@ -185,16 +190,18 @@ public abstract class GameObject implements Drawable {
         return sprite;
     }
 
-    public void setSprite(String resource) {
+    public void setSprite(String resource) throws ResourceLoadingException {
         setSprite(new Sprite(resource));
     }
 
-    public void setSprite(String resource, int tilesPerRow, int tilesPerCol) {
+    public void setSprite(String resource, int tilesPerRow, int tilesPerCol) throws ResourceLoadingException {
         setSprite(new Sprite(resource, tilesPerRow, tilesPerCol));
     }
 
     public void setSprite(Sprite sprite) {
         this.sprite = sprite;
-        setSize((int) (this.sprite.getTileWidth() * SCALE), (int) (this.sprite.getTileHeight() * SCALE));
+        if(getHeight() == 0 && getWidth() == 0) {
+            setSize((int) (this.sprite.getTileWidth() * SCALE), (int) (this.sprite.getTileHeight() * SCALE));
+        }
     }
 }

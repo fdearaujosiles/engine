@@ -1,26 +1,34 @@
 package engine.window;
 
-import engine.controller.InputManager;
-import engine.gameObject.GameObjectManager;
-import engine.gameObject.GameObject;
-import engine.gameObject.Scene;
+import engine.input.InputManager;
+import engine.game_object.GameObjectManager;
+import engine.game_object.GameObject;
+import engine.game_object.ui.debug.FPSCounter;
+import engine.game_object.ui.debug.Pointer;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
+import java.util.List;
 
 import static engine.utils.constants.Window.*;
 
 public class GamePanel extends JPanel {
 
-    private final ArrayList<GameObject> objects = new ArrayList<>();
-    private final InputManager iM = new InputManager(this);
-    private final GameObjectManager gOM = new GameObjectManager(this);
+    private double deltaFrame;
+    private double deltaUpdate;
 
-    private int aniTick, aniIndex;
+    private final transient InputManager iM = new InputManager(this);
+    private final transient GameObjectManager gOM = new GameObjectManager(this);
+    private final transient FPSCounter fpsCounter = new FPSCounter();
+    private final transient Pointer pointer = new Pointer();
+
+    private int aniTick;
+    private int aniIndex;
 
     public GamePanel() {
         setPanelSize();
+        new GameWindow(this);
     }
 
     public void setPanelSize() {
@@ -42,23 +50,26 @@ public class GamePanel extends JPanel {
     }
 
     public void updateGame() {
-        objects.forEach(GameObject::update);
+        gOM.forEach(GameObject::update);
     }
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        updateAnimation();
         try {
-            for(GameObject gameObject : objects) {
-                gameObject.draw(g, aniIndex);
+            updateAnimation();
+            if(!gOM.isEmpty()) {
+                gOM.forEach(gameObject -> gameObject.draw(g, aniIndex));
             }
-        } catch (Exception _) {}
+        } catch (ConcurrentModificationException _) {}
 
+        fpsCounter.draw(g,aniIndex);
+        pointer.draw(g,aniIndex);
     }
 
-    public ArrayList<GameObject> getObjects() {
-        return objects;
+    public List<GameObject> getObjects() {
+        return gOM.getObjects();
     }
 
     public InputManager getInputManager() {
@@ -67,5 +78,43 @@ public class GamePanel extends JPanel {
 
     public GameObjectManager getGameObjectManager() {
         return gOM;
+    }
+
+    public FPSCounter getFpsCounter() {
+        return fpsCounter;
+    }
+
+    public Pointer getPointer() {
+        return pointer;
+    }
+
+    public double getDeltaFrame() {
+        return deltaFrame;
+    }
+
+    public void setDeltaFrame(double deltaFrame) {
+        this.deltaFrame = deltaFrame;
+    }
+
+    public double getDeltaUpdate() {
+        return deltaUpdate;
+    }
+
+    public void setDeltaUpdate(double deltaUpdate) {
+        this.deltaUpdate = deltaUpdate;
+    }
+
+    public void addToDeltaFrame(int deltaFrame) {
+        this.deltaFrame += deltaFrame;
+    }
+    public void addToDeltaFrame(double deltaFrame) {
+        this.deltaFrame += deltaFrame;
+    }
+
+    public void addToDeltaUpdate(int deltaUpdate) {
+        this.deltaUpdate += deltaUpdate;
+    }
+    public void addToDeltaUpdate(double deltaUpdate) {
+        this.deltaUpdate += deltaUpdate;
     }
 }

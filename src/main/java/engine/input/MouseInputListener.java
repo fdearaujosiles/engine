@@ -1,20 +1,20 @@
-package engine.controller;
+package engine.input;
 
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 
 import java.awt.event.*;
 
 public abstract class MouseInputListener extends InputListener implements MouseListener, MouseMotionListener, MouseWheelListener {
 
-    public MouseInputListener(GameObject gameObject) {
+    protected MouseInputListener(GameObject gameObject) {
         super(gameObject);
     }
 
     protected static boolean isIn(MouseEvent e, GameObject gO) {
-        int xEnd = gO.getX() + gO.getWidth();
-        int yEnd = gO.getY() + gO.getHeight();
-        boolean xIn = e.getX() > gO.getX() && e.getX() < xEnd;
-        boolean yIn = e.getY() > gO.getY() && e.getY() < yEnd;
+        int xEnd = gO.getX() + Math.abs(gO.getWidth());
+        int yEnd = gO.getY() + Math.abs(gO.getHeight());
+        boolean xIn = e.getX() >= gO.getX() && e.getX() <= xEnd;
+        boolean yIn = e.getY() >= gO.getY() && e.getY() <= yEnd;
 
         return xIn && yIn;
     }

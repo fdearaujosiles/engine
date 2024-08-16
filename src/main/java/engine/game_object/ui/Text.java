@@ -1,20 +1,20 @@
-package engine.gameObject.ui;
+package engine.game_object.ui;
 
-import engine.gameObject.GameObject;
+import engine.game_object.GameObject;
 
 import java.awt.*;
 
 public class Text extends GameObject {
 
-    private String text;
+    private String string;
 
-    public Text(Point position, String text) {
+    public Text(Point position, String string) {
         super(position);
-        setText(text);
+        setText(string);
     }
-    public Text(int x, int y, String text) {
+    public Text(int x, int y, String string) {
         super(x, y);
-        setText(text);
+        setText(string);
     }
 
     @Override
@@ -23,10 +23,10 @@ public class Text extends GameObject {
     }
 
     public String getText() {
-        return text;
+        return string;
     }
 
     public void setText(String text) {
-        this.text = text;
+        this.string = text;
     }
 }
