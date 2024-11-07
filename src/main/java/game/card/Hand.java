@@ -37,12 +37,10 @@ public class Hand {
     }
 
     public void addCard(Card card) {
-        new Audio(CARD_AUDIO);
         cards.add(card);
     }
 
     public void removeCard(Card card) {
-        new Audio(CARD_AUDIO);
         cards.remove(card);
     }
 

@@ -1,7 +1,6 @@
 package engine.audio;
 
 import engine.audio.player.AudioPlayer;
-import engine.audio.player.AudioMP3;
 import engine.audio.player.AudioWAV;
 import engine.error.EngineRuntimeException;
 
@@ -22,7 +21,6 @@ public class Audio {
     private void loadResource(String resource, int delay) {
         player = switch(resource.substring(resource.lastIndexOf(".")).toLowerCase()) {
             case ".wav" -> new AudioWAV(resource, delay);
-            case ".mp3" -> new AudioMP3(resource, delay);
             default -> throw new EngineRuntimeException();
         };
         player.start();
