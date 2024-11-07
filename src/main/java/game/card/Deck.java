@@ -2,16 +2,10 @@ package game.card;
 
 import game.utils.constants.Sprites;
 import engine.game_object.GameObject;
-import game.card.clubs.*;
-import game.card.diamonds.*;
-import game.card.hearts.*;
-import game.card.others.Joker01;
-import game.card.others.Joker02;
-import game.card.spades.*;
-
 import java.util.ArrayList;
 
 import static engine.utils.functions.Utils.shuffleArray;
+import static game.card.CardValue.*;
 
 public class Deck extends GameObject {
 
@@ -23,6 +17,7 @@ public class Deck extends GameObject {
         setAnimation(22, 23);
 
         addNewDeck();
+        shuffle();
     }
 
     public void shuffle() {
@@ -34,67 +29,67 @@ public class Deck extends GameObject {
         return cards.removeFirst();
     }
 
-    public void addCard(Card card) {
-        cards.add(card);
-        card.setState(Card.State.ON_DECK);
+    public void addCard(CardValue value) {
+        Card newCard = new Card(value);
+        cards.add(newCard);
+        newCard.setState(Card.State.ON_DECK);
     }
 
     private void addNewDeck() {
-        addCard(new SpadesAce());
-        addCard(new Spades02());
-        addCard(new Spades03());
-        addCard(new Spades04());
-        addCard(new Spades05());
-        addCard(new Spades06());
-        addCard(new Spades07());
-        addCard(new Spades08());
-        addCard(new Spades09());
-        addCard(new Spades10());
-        addCard(new SpadesJack());
-        addCard(new SpadesQueen());
-        addCard(new SpadesKing());
-        addCard(new HeartsAce());
-        addCard(new Hearts02());
-        addCard(new Hearts03());
-        addCard(new Hearts04());
-        addCard(new Hearts05());
-        addCard(new Hearts06());
-        addCard(new Hearts07());
-        addCard(new Hearts08());
-        addCard(new Hearts09());
-        addCard(new Hearts10());
-        addCard(new HeartsJack());
-        addCard(new HeartsQueen());
-        addCard(new HeartsKing());
-        addCard(new ClubsAce());
-        addCard(new Clubs02());
-        addCard(new Clubs03());
-        addCard(new Clubs04());
-        addCard(new Clubs05());
-        addCard(new Clubs06());
-        addCard(new Clubs07());
-        addCard(new Clubs08());
-        addCard(new Clubs09());
-        addCard(new Clubs10());
-        addCard(new ClubsJack());
-        addCard(new ClubsQueen());
-        addCard(new ClubsKing());
-        addCard(new DiamondsAce());
-        addCard(new Diamonds02());
-        addCard(new Diamonds03());
-        addCard(new Diamonds04());
-        addCard(new Diamonds05());
-        addCard(new Diamonds06());
-        addCard(new Diamonds07());
-        addCard(new Diamonds08());
-        addCard(new Diamonds09());
-        addCard(new Diamonds10());
-        addCard(new DiamondsJack());
-        addCard(new DiamondsQueen());
-        addCard(new DiamondsKing());
-        addCard(new Joker01());
-        addCard(new Joker02());
-        shuffle();
+        addCard(SpadesAce);
+        addCard(Spades02);
+        addCard(Spades03);
+        addCard(Spades04);
+        addCard(Spades05);
+        addCard(Spades06);
+        addCard(Spades07);
+        addCard(Spades08);
+        addCard(Spades09);
+        addCard(Spades10);
+        addCard(SpadesJack);
+        addCard(SpadesQueen);
+        addCard(SpadesKing);
+        addCard(HeartsAce);
+        addCard(Hearts02);
+        addCard(Hearts03);
+        addCard(Hearts04);
+        addCard(Hearts05);
+        addCard(Hearts06);
+        addCard(Hearts07);
+        addCard(Hearts08);
+        addCard(Hearts09);
+        addCard(Hearts10);
+        addCard(HeartsJack);
+        addCard(HeartsQueen);
+        addCard(HeartsKing);
+        addCard(ClubsAce);
+        addCard(Clubs02);
+        addCard(Clubs03);
+        addCard(Clubs04);
+        addCard(Clubs05);
+        addCard(Clubs06);
+        addCard(Clubs07);
+        addCard(Clubs08);
+        addCard(Clubs09);
+        addCard(Clubs10);
+        addCard(ClubsJack);
+        addCard(ClubsQueen);
+        addCard(ClubsKing);
+        addCard(DiamondsAce);
+        addCard(Diamonds02);
+        addCard(Diamonds03);
+        addCard(Diamonds04);
+        addCard(Diamonds05);
+        addCard(Diamonds06);
+        addCard(Diamonds07);
+        addCard(Diamonds08);
+        addCard(Diamonds09);
+        addCard(Diamonds10);
+        addCard(DiamondsJack);
+        addCard(DiamondsQueen);
+        addCard(DiamondsKing);
+        addCard(Joker01);
+        addCard(Joker02);
     }
 }
 

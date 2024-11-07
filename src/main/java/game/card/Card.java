@@ -5,7 +5,7 @@ import engine.sprite.Sprite;
 import game.utils.constants.Sprites;
 import engine.game_object.GameObject;
 
-public abstract class Card extends GameObject {
+public class Card extends GameObject {
 
     public enum State {
         FACE_DOWN,
@@ -14,7 +14,8 @@ public abstract class Card extends GameObject {
         ON_PILE
     }
 
-    protected int value = 0;
+    private CardValue cardValue;
+    private CardEffect effect;
 
     private State state = State.FACE_DOWN;
     private Animation cardBack;
@@ -23,11 +24,18 @@ public abstract class Card extends GameObject {
         this.state = state;
     }
 
-    protected Card() {
+    protected Card(CardValue cardValue) {
         super();
         setSprite(Sprites.DEFAULT_CARD_DECK, 14, 4);
+        setCardValue(cardValue);
         setCardBack(new Animation(new Sprite(Sprites.DECKBACKS, 7, 4), 22, 23));
         setMouseInputs(new CardController(this));
+    }
+
+    private void setCardValue(CardValue cardValue) {
+        this.cardValue = cardValue;
+        this.effect = new CardEffect(cardValue);
+        setAnimation(cardValue.ordinal(), cardValue.ordinal() + 1);
     }
 
     public Animation getCardBack() {
@@ -47,8 +55,12 @@ public abstract class Card extends GameObject {
         };
     }
 
-    public int getValue() {
-        return value;
+    public CardValue getCardValue() {
+        return cardValue;
+    }
+
+    public CardEffect getEffect() {
+        return effect;
     }
 
     @Override
